@@ -1,0 +1,23 @@
+@mixin FilterAtom {
+  z-index: 1;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.15);
+  top: $r0;
+  left: $r0;
+  width: $r100;
+  height: $r100;
+}
+
+.Filter [aria-expanded="true"] {
+  @include FilterAtom;
+  touch-action: none;
+  visibility: visible;
+  transition-duration: 0.5s;
+}
+
+.Filter [aria-expanded="false"] {
+  @include FilterAtom;
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
